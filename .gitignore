@@ -1,0 +1,12 @@
+node_modules/
+
+npm-debug.log
+
+Tasks/**/*.js
+Tasks/**/*.js.map
+
+*.vsix
+*.taskkey
+Tasks/typings/
+Tasks/*ServiceNow*/models.ts
+Tasks/*ServiceNow*/serviceNowClient.ts

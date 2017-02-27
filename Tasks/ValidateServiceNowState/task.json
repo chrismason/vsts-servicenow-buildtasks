@@ -1,0 +1,108 @@
+{
+    "id": "d068b9e2-04cc-4266-a805-e1742e7b8029",
+    "name": "ServiceNow: Validate Ticket State Task",
+    "friendlyName": "Validate the state of a ticket in ServiceNow",
+    "description": "Validate the state of a ticket in ServiceNow",
+    "helpMarkDown": "",
+    "category": "Build",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "author": "Chris Mason",
+    "version": {
+        "Major": 0,
+        "Minor": 4,
+        "Patch": 0
+    },
+    "groups": [
+        {
+            "name": "attachments",
+            "displayName": "Attachments",
+            "isExpanded": false
+        }
+    ],
+    "demands": [],
+    "minimumAgentVersion": "1.83.0",
+    "inputs": [
+        {
+            "name": "authenticationType",
+            "type": "radio",
+            "label": "Authentication Type",
+            "required": true,
+            "defaultValue": "basic",
+            "options": {
+                "basic": "Basic (Eureka)",
+                "oauth": "OAuth (Fuji and higher)"
+            }
+        },
+        {
+            "name": "serviceNowOAuthEndPoint",
+            "type": "connectedService:servicenow-oauth-key",
+            "label": "Service Now Endpoint (Fuji+)",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Service Now endpoint that is configured with your client ID.",
+            "visibleRule": "authenticationType = oauth"
+        },
+        {
+            "name": "serviceNowBasicEndPoint",
+            "type": "connectedService:servicenow-basic-key",
+            "label": "Service Now Endpoint (Eureka)",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Service Now endpoint that is configured with a username and password.",
+            "visibleRule": "authenticationType = basic"
+        },
+        {
+            "name": "tableName",
+            "required": true,
+            "type": "pickList",
+            "label": "Service Now Table",
+            "defaultValue": "change_request",
+            "options": {
+                "change_request": "Change Requests",
+                "incident": "Incidents"
+            }
+        },
+        {
+            "name": "recordNumber",
+            "type": "string",
+            "label": "Record Number",
+            "required": true,
+            "defaultValue": ""
+        },
+        {
+            "name": "desiredState",
+            "required": true,
+            "type": "pickList",
+            "label": "Service Now Table",
+            "defaultValue": "-5",
+            "options": {
+                "-5": "New",
+                "-4": "Assess",
+                "-3": "Authorize",
+                "-2": "Scheduled",
+                "-1": "Implement",
+                "-0": "Review",
+                "3": "Closed"
+            }
+        },
+        {
+            "name": "desiredState",
+            "type": "string",
+            "label": "Desired State",
+            "defaultValue": "",
+            "helpMarkDown": "",
+            "required": true
+        }
+    ],
+    "instanceNameFormat": "Validate ServiceNow ticket",
+    "execution": {
+        "Node": {
+            "target": "$(currentDirectory)\\app.js",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

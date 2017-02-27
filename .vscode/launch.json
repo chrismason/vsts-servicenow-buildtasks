@@ -1,0 +1,98 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CreateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/CreateServiceNowTicket/app.ts",
+            "stopOnEntry": false,
+            "args": [],
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "INPUT_SERVICENOWURL": "https://<INSTANCE>.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "<USERNAME>",
+                "INPUT_USERPASSWORD": "<PASSWORD>",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_DESCRIPTION": "test description from basic auth",
+                "INPUT_USEGENERICDATA": "true",
+                "INPUT_JSONREPRESENTATION": "{\"short_description\": \"generic representation\" }",
+                "INPUT_URGENCY": "1",
+                "INPUT_IMPACT": "1",
+                "INPUT_authenticationType": "basic"
+            },
+            "cwd": "${workspaceRoot}/Tasks/CreateServiceNowTicket",
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/Tasks/CreateServiceNowTicket"
+        },
+        {
+            "name": "UpdateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/UpdateServiceNowTicket/app.ts",
+            "stopOnEntry": false,
+            "args": [],
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "INPUT_SERVICENOWURL": "https://<INSTANCE>.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "<USERNAME>",
+                "INPUT_USERPASSWORD": "<PASSWORD>",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_DESCRIPTION": "modified record from test",
+                "INPUT_USEGENERICDATA": "true",
+                "INPUT_JSONREPRESENTATION": "{\"description\": \"generic representation description to add\" }",
+                "INPUT_authenticationType": "basic",
+                "INPUT_RECORDNUMBER": "CHG0000034",
+                "INPUT_UPLOADATTACHMENT": "true",
+                "INPUT_ATTACHMENTFILE": "${workspaceRoot}/package.json"
+            },
+            "cwd": "${workspaceRoot}/Tasks/UpdateServiceNowTicket",
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/Tasks/UpdateServiceNowTicket"
+        },
+        {
+            "name": "ValidateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/ValidateServiceNowState/app.ts",
+            "stopOnEntry": false,
+            "args": [],
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "INPUT_SERVICENOWURL": "https://<INSTANCE>.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "<USERNAME>",
+                "INPUT_USERPASSWORD": "<PASSWORD>",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_RECORDNUMBER": "CHG0000036",
+                "INPUT_DESIREDSTATE": "New"
+            },
+            "cwd": "${workspaceRoot}/Tasks/ValidateServiceNowState",
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/Tasks/ValidateServiceNowState"
+        }
+    ]
+}

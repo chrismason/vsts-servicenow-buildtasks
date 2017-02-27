@@ -1,0 +1,38 @@
+{
+  "name": "vststasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:vsix": "rimraf *.vsix",
+    "initdev:npm": "npm install",
+    "initdev:typings": "pushd Tasks && typings install && popd",
+    "initdev": "npm run initdev:npm && npm run initdev:typings",
+    "precompile:tasks": "node scripts/copyFilesToTasks -u 2 Tasks/Common/*.ts Tasks",
+    "compile:tasks": "tsc --project Tasks",
+    "postcompile:tasks": "npm run lint:tasks",
+    "lint:tasks": "tslint -c tslint.json \"Tasks/!(typings)/*.ts",
+    "prelink:tasks": "mkdirp Tasks/_temp/node_modules && pushd \"Tasks/_temp\" && npm install vsts-task-lib && popd",
+    "link:tasks": "node scripts/copyFilesToTasks -u 2 Tasks/_temp/node_modules/**/* Tasks",
+    "postlink:tasks": "rimraf Tasks/_temp",
+    "link:tasks:create": "pushd \"Tasks/CreateServiceNowTicket\" && npm install && popd",
+    "link:tasks:update": "pushd \"Tasks/UpdateServiceNowTicket\" && npm install && popd",
+    "link:tasks:validate": "pushd \"Tasks/ValidateServiceNowState\" && npm install && popd",
+    "build:tasks": "npm run build:tasks:noclean",
+    "build:tasks:noclean": "npm run compile:tasks && npm run link:tasks:create && npm run link:tasks:update && npm run link:tasks:validate",
+    "package:tasks": "npm run clean:vsix && tfx extension create --manifest-globs vss-extension.json",
+    "publish:tasks": "tfx extension publish --manifest-globs vss-extension.json --share-with <ACCOUNT> --token <TOKEN>"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "q": "^1.4.1",
+    "rimraf": "^2.5.4",
+    "tfx-cli": "^0.3.39",
+    "tsconfig-glob": "^0.4.3",
+    "tslint": "^3.15.1",
+    "typescript": "~2.0.8"
+  }
+}
