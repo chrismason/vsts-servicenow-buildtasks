@@ -7,7 +7,7 @@ function installTaskDependencies() {
     var rootPath = process.cwd();
     var buildTasksDir = path.join(rootPath, "./Tasks");
     var tasks = fs.readdirSync(buildTasksDir).filter(function (file) {
-        return file.toLowerCase().indexOf("servicenow") >= 0 && fs.statSync(path.join(buildTasksDir, file)).isDirectory();
+        return (file.toLowerCase().indexOf("servicenow") >= 0 || file.toLowerCase().indexOf("common") >= 0) && fs.statSync(path.join(buildTasksDir, file)).isDirectory();
     });
     tasks.forEach(function (task) {
         console.log("Processing task " + task);
