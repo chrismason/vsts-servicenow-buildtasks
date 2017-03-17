@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import tl = require("vsts-task-lib/task");
 import { TaskOptions, Constants } from "./models";
 

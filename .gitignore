@@ -10,3 +10,4 @@ Tasks/**/*.js.map
 Tasks/typings/
 Tasks/*ServiceNow*/models.ts
 Tasks/*ServiceNow*/serviceNowClient.ts
+dist/

@@ -16,72 +16,12 @@
 	],
 	"content": {
 		"details": {
-			"path": "overview.md"
+			"path": "marketplace/overview.md"
 		}
 	},
 	"files": [
 		{
-			"path": "Tasks/CreateServiceNowTicket/models.js"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/serviceNowClient.js"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/app.js"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/createTaskModels.js"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/icon.png"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/task.json"
-		},
-		{
-			"path": "Tasks/CreateServiceNowTicket/node_modules"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/models.js"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/serviceNowClient.js"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/app.js"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/updateTaskModels.js"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/icon.png"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/task.json"
-		},
-		{
-			"path": "Tasks/UpdateServiceNowTicket/node_modules"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/models.js"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/serviceNowClient.js"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/app.js"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/validateStateTaskModels.js"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/icon.png"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/task.json"
-		},
-		{
-			"path": "Tasks/ValidateServiceNowState/node_modules"
+			"path": "Tasks"
 		}
 	],
 	"contributions": [

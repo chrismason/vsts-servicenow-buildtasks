@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "vsts-task-lib": "^1.1.0",
+    "vsts-task-lib": "^2.0.0-preview",
     "q": "^1.4.1",
     "request": "^2.78.0"
   }

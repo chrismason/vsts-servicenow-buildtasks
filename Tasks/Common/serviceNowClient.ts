@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import tl = require("vsts-task-lib/task");
 import request = require("request");
 import * as models from "./models";

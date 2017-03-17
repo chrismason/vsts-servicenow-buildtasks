@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import tl = require("vsts-task-lib/task");
 import path = require("path");
 import fs = require("fs");
