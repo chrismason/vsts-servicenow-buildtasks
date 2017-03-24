@@ -30,7 +30,8 @@ export class ServiceNowClient {
                 client_secret: thisClient.taskOptions.serverOptions.clientSecret,
                 username: thisClient.taskOptions.serverOptions.userAccount,
                 password: thisClient.taskOptions.serverOptions.userPassword
-            }
+            },
+            strictSSL: false
         }, (err, httpResponse, body) => {
             if (err) {
                 defer.reject(err);
@@ -120,7 +121,8 @@ export class ServiceNowClient {
                         password: thisClient.taskOptions.serverOptions.userPassword
                     },
                     headers: headers,
-                    method: "POST"
+                    method: "POST",
+                    strictSSL: false,
                 }, callback));
             } else {
                 fs.createReadStream(options.filePath).pipe(request(url, {
@@ -184,6 +186,7 @@ export class ServiceNowClient {
                     headers: headers,
                     method: method,
                     json: jsonData,
+                    strictSSL: false,
                 }, callback);
             } else {
                 request(url, {
@@ -247,11 +250,13 @@ export class ServiceNowClient {
                         username: thisClient.taskOptions.serverOptions.userAccount,
                         password: thisClient.taskOptions.serverOptions.userPassword
                     },
+                    strictSSL: false,
                     headers: basicHeaders
                 }, callback);
             } else {
                 request.get(url, {
-                    headers: oauthHeaders
+                    headers: oauthHeaders,
+                    strictSSL: false,
                 }, callback);
             }
         }
