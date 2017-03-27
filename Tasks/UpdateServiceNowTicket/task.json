@@ -1,7 +1,7 @@
 {
   "id": "36927faf-dc24-4b87-b425-73d3114e1573",
-  "name": "ServiceNow: Update Ticket Task",
-  "friendlyName": "Update a ticket in ServiceNow",
+  "name": "UpdateServiceNowTicketTask",
+  "friendlyName": "ServiceNow: Update a ticket",
   "description": "Update a new entry in ServiceNow",
   "helpMarkDown": "",
   "category": "Build",

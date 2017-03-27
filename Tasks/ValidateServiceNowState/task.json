@@ -1,7 +1,7 @@
 {
     "id": "d068b9e2-04cc-4266-a805-e1742e7b8029",
-    "name": "ServiceNow: Validate Ticket State Task",
-    "friendlyName": "Validate the state of a ticket in ServiceNow",
+    "name": "ValidateServiceNowTicketStateTask",
+    "friendlyName": "ServiceNow: Validate the state of a ticket",
     "description": "Validate the state of a ticket in ServiceNow",
     "helpMarkDown": "",
     "category": "Build",

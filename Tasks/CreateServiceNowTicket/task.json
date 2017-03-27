@@ -1,7 +1,7 @@
 {
   "id": "5d1c06ab-cb85-490c-bace-04a415a36e00",
-  "name": "ServiceNow: Create Ticket Task",
-  "friendlyName": "Create a ticket in ServiceNow",
+  "name": "CreateServiceNowTicketTask",
+  "friendlyName": "ServiceNow: Create a ticket",
   "description": "Create a new entry in ServiceNow",
   "helpMarkDown": "",
   "category": "Build",
