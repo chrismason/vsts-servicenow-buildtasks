@@ -125,9 +125,8 @@
   "instanceNameFormat": "Update ServiceNow ticket",
   "execution": {
     "Node": {
-      "target": "$(currentDirectory)\\app.js",
-      "argumentFormat": "",
-      "workingDirectory": "$(currentDirectory)"
+      "target": "app.js",
+      "argumentFormat": ""
     }
   }
 }
