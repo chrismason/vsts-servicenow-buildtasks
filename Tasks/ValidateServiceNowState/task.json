@@ -87,14 +87,6 @@
                 "-0": "Review",
                 "3": "Closed"
             }
-        },
-        {
-            "name": "desiredState",
-            "type": "string",
-            "label": "Desired State",
-            "defaultValue": "",
-            "helpMarkDown": "",
-            "required": true
         }
     ],
     "instanceNameFormat": "Validate ServiceNow ticket",
