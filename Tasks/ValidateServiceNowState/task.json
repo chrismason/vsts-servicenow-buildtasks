@@ -76,7 +76,7 @@
             "name": "desiredState",
             "required": true,
             "type": "pickList",
-            "label": "Service Now Table",
+            "label": "Ticket State",
             "defaultValue": "-5",
             "options": {
                 "-5": "New",
