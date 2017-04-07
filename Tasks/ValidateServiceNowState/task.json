@@ -15,13 +15,6 @@
         "Minor": 4,
         "Patch": 0
     },
-    "groups": [
-        {
-            "name": "attachments",
-            "displayName": "Attachments",
-            "isExpanded": false
-        }
-    ],
     "demands": [],
     "minimumAgentVersion": "1.83.0",
     "inputs": [
