@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="../libs/VSS.SDK.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/fabric.min.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Initialize framework 
+        VSS.init({
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true,
+        });
+
+        // Load main entry point for extension
+        VSS.ready(function () {
+            require(["src/summary"], function (app) {
+                app.initialize("summary-view");
+                VSS.notifyLoadSucceeded();
+            });
+        });
+    </script>
+
+    <div id="summary-view">
+
+    </div>
+</body>
+
+</html>

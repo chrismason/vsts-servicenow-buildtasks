@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es6",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "types": [
+            "requirejs"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

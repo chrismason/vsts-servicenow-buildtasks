@@ -1,0 +1,20 @@
+.stageTile {
+    width: 35px;
+    height: 100%;
+    float: left;
+    margin-right: 5px;
+    display: block;
+    background-color: #a6a6a6;
+
+    &.complete {
+        background-color: #107c10;
+    }
+
+    &.inprogress {
+        background-color: #00188f;
+    }
+
+    &.rejected {
+        background-color: #a80000;
+    }
+}

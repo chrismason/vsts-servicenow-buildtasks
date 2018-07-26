@@ -1,0 +1,36 @@
+{
+    "name": "fmac-service-now-tasks",
+    "version": "1.0.0",
+    "description": "Build and release tasks for talking to ServiceNow",
+    "scripts": {
+        "clean:dist": "rimraf dist",
+        "clean:vsix": "rimraf *.vsix",
+        "postinstall": "node Scripts/setupBuild && pushd \"WebExtensions/\" && npm install && popd",
+        "precompile:tasks": "npm run lint",
+        "compile:tasks": "tsc --project Tasks",
+        "lint": "npm run lint:tasks && npm run lint:webextension",
+        "lint:tasks": "tslint -c tslint.json \"Tasks/!(@types)/*.ts",
+        "lint:webextension": "tslint -c tslint.json \"WebExtensions/src/**/*.ts*\"",
+        "build:webextension": "pushd \"WebExtensions/\" && npm run build && popd",
+        "build:tasks:noclean": "npm run compile:tasks",
+        "build": "npm run clean:dist && npm run build:tasks:noclean && npm run content:tasks && npm run content:extension:tasks && npm run build:webextension",
+        "content:tasks": "npm run content:tasks:scripts && npm run content:tasks:node",
+        "content:tasks:scripts": "copyfiles \"./Tasks/*ServiceNow*/**/!(*.ts)\" dist",
+        "content:tasks:node": "copyfiles \"./Tasks/*ServiceNow*/**/node_modules/**/*\" dist",
+        "content:extension:tasks": "copyfiles vss-extension.json Marketplace/**/* dist",
+        "package:dev": "node ./scripts/packageDev",
+        "package": "npm run build && npm run package:dev",
+        "webdev": "pushd \"WebExtensions/\" && npm run dev"
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.7",
+        "copyfiles": "^1.2.0",
+        "mkdirp": "^0.5.1",
+        "q": "^1.5.0",
+        "rimraf": "^2.6.1",
+        "tfx-cli": "^0.4.9",
+        "tsconfig-glob": "^0.4.3",
+        "tslint": "^5.5.0",
+        "typescript": "~2.3.4"
+    }
+}

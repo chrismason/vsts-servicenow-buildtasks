@@ -1,0 +1,118 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://localhost:9090",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/WebExtensions",
+            "smartStep": true,
+            "userDataDir": "${workspaceRoot}/out/chrome"
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "CreateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/ServiceNowTicketTask/app.ts",
+            "env": {
+                "INPUT_SERVICENOWACTION": "create",
+                "INPUT_SERVICENOWURL": "https://dev27178.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "restuser",
+                "INPUT_USERPASSWORD": "restuser",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_DESCRIPTION": "test description from basic auth",
+                "INPUT_USEGENERICDATA": "true",
+                "INPUT_JSONREPRESENTATION": "{\"short_description\": \"generic representation\" }",
+                "INPUT_URGENCY": "1",
+                "INPUT_IMPACT": "1",
+                "INPUT_authenticationType": "basic"
+            },
+            "cwd": "${workspaceRoot}/Tasks/ServiceNowTicketTask",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/Tasks/ServiceNowTicketTask/**/*.js"
+            ]
+        },
+        {
+            "name": "UpdateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/ServiceNowTicketTask/app.ts",
+            "env": {
+                "INPUT_SERVICENOWACTION": "update",
+                "INPUT_SERVICENOWURL": "https://dev23188.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "restuser",
+                "INPUT_USERPASSWORD": "restuser",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_RECORDNUMBER": "CHG0030003",
+                "INPUT_authenticationType": "basic",
+                "INPUT_DEVTOKEN": "",
+                "INPUT_DEVRELEASEID": "11",
+                "INPUT_DEVURI": "https://cmason.vsrm.visualstudio.com/",
+                "INPUT_DEVTEAMPROJECT": "MSReady",
+                "INPUT_DEVPROJECTID": "6af99f87-f5aa-4e1a-a5e8-688f699c4a20",
+                "INPUT_DESCRIPTION": "modified record from test",
+                "INPUT_USEGENERICDATA": "true",
+                "INPUT_JSONREPRESENTATION": "{\"description\": \"generic representation description to add\" }",
+                "INPUT_UPLOADATTACHMENT": "true",
+                "INPUT_ATTACHMENTFILE": "${workspaceRoot}/package.json"
+            },
+            "cwd": "${workspaceRoot}/Tasks/ServiceNowTicketTask",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/Tasks/ServiceNowTicketTask/**/*.js"
+            ]
+        },
+        {
+            "name": "ValidateTicket",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/Tasks/ServiceNowTicketTask/app.ts",
+            "env": {
+                "INPUT_SERVICENOWACTION": "validate",
+                "INPUT_SERVICENOWURL": "https://dev23188.service-now.com/",
+                "INPUT_SERVICENOWCLIENTID": "<OAUTH_CLIENTID>",
+                "INPUT_SERVICENOWCLIENTSECRET": "<OAUTH_CLIENTSECRET>",
+                "INPUT_LOCALDEVELOPMENT": "true",
+                "INPUT_USERACCOUNT": "restuser",
+                "INPUT_USERPASSWORD": "restuser",
+                "INPUT_TABLENAME": "change_request",
+                "INPUT_RECORDNUMBER": "CHG0030003",
+                "INPUT_DESIREDSTATE": "-5",
+                "INPUT_authenticationType": "basic",
+                "INPUT_DEVTOKEN": "",
+                "INPUT_DEVRELEASEID": "11",
+                "INPUT_DEVURI": "https://cmason.vsrm.visualstudio.com/",
+                "INPUT_DEVTEAMPROJECT": "MSReady",
+                "INPUT_DEVPROJECTID": "6af99f87-f5aa-4e1a-a5e8-688f699c4a20"
+            },
+            "cwd": "${workspaceRoot}/Tasks/ServiceNowTicketTask",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/Tasks/ServiceNowTicketTask/**/*.js"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "servicenow-vsts-tasks",
+    "version": "1.0.0",
+    "dependencies": {
+        "@types/request": "^0.0.45",
+        "vsts-task-lib": "^2.0.5",
+        "vso-node-api": "^6.2.5-preview",
+        "q": "^1.4.1",
+        "request": "^2.81.0"
+    }
+}

@@ -1,13 +1,16 @@
 node_modules/
-
-npm-debug.log
-
-Tasks/**/*.js
-Tasks/**/*.js.map
+build/
+dist/
+out/
 
 *.vsix
 *.taskkey
-Tasks/typings/
-Tasks/*ServiceNow*/models.ts
-Tasks/*ServiceNow*/serviceNowClient.ts
-dist/
+*.js.map
+npm-debug.log
+
+ServiceNow/Web/Tasks/*ServiceNow*/models.ts
+ServiceNow/Web/Tasks/*ServiceNow*/serviceNowClient.ts
+ServiceNow/Web/Tasks/**/*.js
+ServiceNow/Web/WebExtensions/libs
+ServiceNow/Web/WebExtensions/css
+package-lock.json
