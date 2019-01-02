@@ -20,7 +20,7 @@ export class UpdateTicket {
 
             this._vstsProvider = new VSTSProvider(this._configuration.tfsConfiguration);
             let connection = new vsts.WebApi(this._configuration.tfsConfiguration.rmUri, this.getAuthHandler());
-            let releaseApi = connection.getReleaseApi();
+            let releaseApi = await connection.getReleaseApi();
 
             let release = await releaseApi.getRelease(this._configuration.tfsConfiguration.teamProject, this._configuration.tfsConfiguration.releaseId);
             let recordNumbers = await this.getReleaseAttachments(release);
